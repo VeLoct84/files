@@ -5,8 +5,8 @@ class Bill:
     """
 
     def __init__(self, amount, time):
-        self.amount = amount    # refer to total amount of the period
-        self.time = time    # period E.g. "Jan, Feb, etc"
+        self.amount = amount  # refer to total amount of the period
+        self.time = time  # period E.g. "Jan, Feb, etc"
 
 
 class Flatmate:
@@ -16,10 +16,14 @@ class Flatmate:
     """
 
     def __init__(self, name, day_in_house):
-        self.name = name    # name of mate who's stay in house
+        self.name = name  # name of mate who's stay in house
         self.day_in_house = day_in_house
 
     def pays(self, bill, flatmate2):
-        weight = self.day_in_house/(self.day_in_house + flatmate2.day_in_house)
+        """
+        Parameter bill for total of the bill.
+        Parameter flamate2 is provide the name of the object. E.g. "marry", "john", etc
+        """
+        weight = self.day_in_house / (self.day_in_house + flatmate2.day_in_house)
         to_pay = bill.amount * weight
         return to_pay
