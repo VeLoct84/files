@@ -3,4 +3,5 @@
 files/
 *.swp
 __pycache__/
+*.png
 .gitignore
