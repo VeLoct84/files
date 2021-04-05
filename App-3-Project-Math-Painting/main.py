@@ -9,6 +9,7 @@ size_canvas = {
     "c": [320, 240]
     }
 
+
 # color for background canvas
 background_canvas ={
     "a" : (255, 255, 255),
@@ -16,26 +17,45 @@ background_canvas ={
     "c" : (128, 128, 128)
     }
 
-# ask user to do selection to set canvas
-print("Please select the size of canvas?")
-print("a - 1024 x 768\nb - 800 x 600\nc - 320 x 240\nd - custom")
-select = input(">>> ")
-print("Background color for canvas?")
-print("a - White\nb - Black\nc - Grey")
-background = input(">>> ")
+while True:
+    # ask user to do selection to set canvas
+    print("Please select the size of canvas?")
+    print("a - 1024 x 768\nb - 800 x 600\nc - 320 x 240\nd - custom")
+    select = input(">>> ")
 
-#TODO if selection is d for custom
+    for selection in size_canvas.keys():
+        if select.lower() == selection:
+            # ask user for background color
+            print("Background color for canvas?")
+            print("a - White\nb - Black\nc - Grey")
+            background = input(">>> ")
 
-# creating object class Canvas
-canvas = draw.Canvas(
-    width=size_canvas[select][0], 
-    height=size_canvas[select][1], 
-    color=background_canvas[background]
-    )
+            canvas = draw.Canvas(
+                width=size_canvas[select][0], 
+                height=size_canvas[select][1], 
+                color=background_canvas[background]
+                )
 
-# save the path
-canvas.make(imagepath="canvas.png")
+    if select.lower() == "d":
+        # this conditional for selection 'd'
+        canvas_width = int(input("Enter width size: "))
+        canvas_height = int(input("Enter height size: "))
 
+        # ask user for background color
+        print("Background color for canvas?")
+        print("a - White\nb - Black\nc - Grey")
+        background = input(">>> ")
+        
+        canvas = draw.Canvas(
+            width=canvas_width,
+            height=canvas_height,
+            color=background_canvas[background]
+            )
+
+        # save the path
+        canvas.make(imagepath="canvas.png")
+        print(f"The canvas.png has been save")
+        break
 
 ## loop random shape
 #for r in range(10):
