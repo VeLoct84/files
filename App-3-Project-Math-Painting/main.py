@@ -52,32 +52,40 @@ while True:
             color=background_canvas[background]
             )
 
-        # save the path
-        canvas.make(imagepath="canvas.png")
-        print(f"The canvas.png has been save")
+    # to ask user to run random shape to paint
+    print("Do you want generate random abstrack painting? [y/n]")
+    user_selection = input(">>> ")
+
+    if user_selection.lower() == "y":
+        # loop random shape
+        for r in range(10):
+            width_random = np.random.randint(canvas.width / 2)
+            height_random = np.random.randint(canvas.height / 2)
+            side_random = np.random.randint(200)
+
+            # create shape rectangle.
+            r1 = Rectangle(
+                x=width_random,
+                y=height_random,
+                width=width_random,
+                height=height_random,
+                color=canvas.rgb_regenerator(),
+            )
+            r1.draw(canvas)
+
+            # create shape square.
+            s1 = Square(
+                x=width_random,
+                y=height_random,
+                side=side_random,
+                color=canvas.rgb_regenerator(),
+            )
+            s1.draw(canvas)
+    # save the path
+    canvas.make(imagepath="canvas.png")
+    print(f"The canvas.png has been save")
+    break
+
+    if user_selection.lower() == "n":
         break
 
-## loop random shape
-#for r in range(10):
-#    width_random = np.random.randint(canvas.width / 2)
-#    height_random = np.random.randint(canvas.height / 2)
-#    side_random = np.random.randint(200)
-#
-#    # create shape rectangle.
-#    r1 = Rectangle(
-#        x=width_random,
-#        y=height_random,
-#        width=width_random,
-#        height=height_random,
-#        color=canvas.rgb_regenerator(),
-#    )
-#    r1.draw(canvas)
-#
-#    # create shape square.
-#    s1 = Square(
-#        x=width_random,
-#        y=height_random,
-#        side=side_random,
-#        color=canvas.rgb_regenerator(),
-#    )
-#    s1.draw(canvas)
