@@ -8,11 +8,22 @@
 			id: img123
 			size_hint_y: 0.8
 		TextInput:
-			size_hint_y: 0.08
+			id: user_query
+			text_name: "verdana"
+			size_hint_y: 0.1
 		Button:
-			size_hint_y: 0.12
-			text: "Search Images"
-			on_press: root.find_images()
+			size_hint_y: 0.1
+			text: 'Search Images'
+			on_press: root.set_images()
+			on_press: root.info()
+			
+		ScrollView:
+			Label:
+				id: summary
+				text: ""
+				text_size: self.width, None
+				size_hint_y: None
+				height: self.texture_size[1]
 
 <RootWidget>:
 	FirstScreen:
