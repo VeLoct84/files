@@ -1,0 +1,34 @@
+h2 {
+    text-align: center;
+    font-size: 50px;
+    font-family: monospace;
+    color: Darkgrey;
+}
+
+p {
+    color: black;
+    font-size: 10px;
+    font-family: monospace;
+}
+
+a:link, a:visited {
+  background-color: ghostwhite;
+  color: yellowgreen;
+  border: 2px solid yellowgreen;
+  padding: 10px 20px;
+  font-family: monospace;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+}
+
+a:active, a:hover {
+    color: ghostwhite;
+    background-color: yellowgreen;
+    font-size: 150%;
+}
+
+
+body {
+    color: lightblue;
+}
